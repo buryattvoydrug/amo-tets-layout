@@ -1,0 +1,142 @@
+.hero {
+  padding: 74px 0 70px;
+  display: flex;
+  justify-content: space-between;
+  &-heading {
+    color: $lightText;
+    &__title {
+      font-weight: 400;
+      font-size: 3rem;
+      font-family: 'Inter', sans-serif;
+      .filled-text {
+        font-weight: 900;
+      }
+    }
+    &__description {
+      font-size: 1.125rem;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 30px;
+    }
+  }
+  &-consult {
+    color: $lightText;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    &__title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1.125rem;
+      text-align: right;
+      margin-top: 15px;
+      .filled-text {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+    &-block {
+      margin: 45px 0 63px;
+      display: grid;
+      grid-template-columns: 150px 150px;
+      column-gap: 16px;
+      row-gap: 30px;
+    }
+    &__item {
+      &__title {
+        font-size: 1.125rem;
+        font-weight: 500;
+        text-align: right;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 6px;
+      }
+      &__text {
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: right;
+        font-family: 'Montserrat', sans-serif;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding-top: 40px;
+    display: block;
+    &-heading {
+      margin-bottom: 47px;
+      &__description {
+        font-size: 1.5rem;
+        margin-top: 15px;
+      }
+    }
+    &-consult {
+      display: block;
+      &__title {
+        font-size: 1.5rem;
+        text-align: left;
+        margin-top: 0;
+        .filled-text {
+          text-transform: none;
+        }
+      }
+      &-block {
+        margin: 20px 0 45px;
+        display: grid;
+        grid-template-columns: 120px auto;
+        column-gap: 5px;
+        row-gap: 14px;
+      }
+      &__item {
+        &__title {
+          text-align: left;
+          position: relative;
+          margin: 0 0 0 15px;
+          &::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 8px;
+            width: 10px;
+            height: 1px;
+            background: $orangeGradient;
+          }
+        }
+        &__text {
+          display: none;
+        }
+        &:nth-child(1) {
+          order: 2;
+          .hero-consult__item__title {
+            font-size: 0;
+            &::after {
+              content: '30 виджетов';
+              position: relative;
+              font-size: 1.125rem;
+            }
+          }
+        }
+        &:nth-child(2) {
+          order: 3;
+        }
+        &:nth-child(3) {
+          order: 1;
+        }
+        &:nth-child(4) {
+          order: 4;
+          .hero-consult__item__title {
+            font-size: 0;
+            &::after {
+              content: 'Месяц аmoCRM';
+              position: relative;
+              font-size: 1.125rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

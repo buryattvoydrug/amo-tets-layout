@@ -1,0 +1,128 @@
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 264px auto 292px;
+  column-gap: 30px;
+  padding: 55px 0 20px;
+  color: $lightText;
+
+  &-menu nav {
+    display: flex;
+  }
+  &-contacts {
+    text-align: right;
+  }
+
+  &__title {
+    color: $darkGray;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 18px;
+  }
+  &-nav {
+    &:first-child {
+      margin-right: 52px;
+    }
+    &__item {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+  }
+  &-social {
+    &__item {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: right;
+      ul {
+        margin: 20px 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .footer-social__item {
+          margin-left: 10px;
+        }
+      }
+      address {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+.bottom {
+  color: $lightText;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-align: right;
+  margin-bottom: 20px;
+  .policy {
+    margin-top: 5px;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  footer {
+    background: $black;
+    height: 610px;
+  }
+  .footer {
+    grid-template-columns: 100%;
+    column-gap: 0;
+    row-gap: 20px;
+    padding: 35px 0 50px;
+
+    &-contacts {
+      text-align: left;
+    }
+  
+    &__title {
+      font-size: 1rem;
+      margin-bottom: 22px;
+    }
+    &-nav {
+      &__item {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+      }
+    }
+    &-social {
+      &__item {
+        font-size: 1.33rem;
+        text-align: left;
+        ul {
+          margin: 8px 0 10px;
+          justify-content: flex-start;
+          .footer-social__item {
+            margin-left: 0;
+            margin-right: 10px;
+          }
+        }
+        address {
+          font-size: 1.16rem;
+        }
+      }
+    }
+  }
+  .bottom {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 60px;
+  }
+}

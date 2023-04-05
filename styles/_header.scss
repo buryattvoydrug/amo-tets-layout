@@ -1,0 +1,121 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 57px 0 50px;
+  &__logo {
+    position: relative;
+    margin-right: 52px;
+    &__description {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 12px;
+      margin-top: 7px;
+    }
+  }
+  nav {
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $lightText;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    &__item:not(:last-child) {
+      margin-right: 30px;
+      
+    }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    &__item:not(:last-child):not(:first-child) {
+      margin-right: 30px;
+    }
+    &__item:nth-child(1) {
+      margin-right: 52px;
+    }
+  }
+}
+.mobile-header, .mobile-top {
+  display: none;
+}
+
+@media screen and (min-width:1024px) and (max-width: 1279px) {
+  .header {
+    &__logo {
+      margin-right: 32px;
+    }
+    &__nav {
+      &__item:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    &__social {
+      &__item:not(:last-child):not(:first-child) {
+        margin-right: 20px;
+      }
+      &__item:nth-child(1) {
+        margin-right: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header {
+    display: none;
+  }
+  .mobile-header {
+    display: block;
+    display: flex;
+    margin: 20px 0 15px;
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__social {
+      display: flex;
+      &__item {
+        height: 24px;
+        width: 24px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      &__item:not(:first-child) {
+        margin-left: 20px;
+      }
+
+    }
+  }
+  .mobile-top {
+    display: block;
+    position: sticky;
+    top: 0;
+    background: $black;
+    overflow-x: scroll;
+    z-index: 10;
+    &__nav {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $lightText;
+      display: flex;
+      padding: 20px 8px;
+      &__item {
+        padding: 0 8px;
+      }
+    }
+  }
+}

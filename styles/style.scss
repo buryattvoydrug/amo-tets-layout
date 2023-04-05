@@ -1,0 +1,144 @@
+// font-family: 'Inter', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Montserrat:wght@300;400&display=swap');
+@import './variables';
+@import './header';
+@import './main';
+@import './footer';
+
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: $black;
+  min-height: calc(100vh - 315px);
+  position: relative;
+  padding-bottom: 315px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.filled-text {
+  background: linear-gradient(92deg, #FCB045 27.14%, #FF3F78 121.36%), #E4E5EA;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.primary-button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  background: #4077F3;
+  color: $lightText;
+  border: none;
+  padding: 21px 35px;
+}
+
+.balls {
+  .ball {
+    position: fixed;
+    border-radius: 100%;
+    z-index: -1;
+  }
+  .ball:nth-child(1) {
+    top: 251px;
+    left: -102px;
+    width: 311px;
+    height: 311px;
+    background: #961A1A;
+    opacity: 0.5;
+    filter: blur(196px);
+  }
+  .ball:nth-child(2) {
+    width: 259px;
+    height: 259px;
+    left: 42%;
+    top: -154px;
+    background: #833AB4;
+    opacity: 0.5;
+    filter: blur(196px);
+  }
+  .ball:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: -2px;
+    right: 37%;
+    background: radial-gradient(64% 64% at 27.25% 26.5%, rgba(236, 208, 255, 0.64) 0%, rgba(161, 93, 207, 0.24) 59.67%, rgba(118, 49, 164, 0.208) 78.59%, rgba(86, 24, 128, 0.232) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: 3px 6px 27px -10px rgba(177, 118, 217, 0.25);
+    filter: blur(5px);
+    backdrop-filter: blur(2px);
+  }
+  .ball:nth-child(4) {
+    width: 83px;
+    height: 83px;
+    left: 37%;
+    top: 83px;
+    background: radial-gradient(64% 64% at 27.25% 26.5%, rgba(255, 208, 208, 0.536) 0%, rgba(212, 93, 93, 0.264) 59.67%, rgba(167, 49, 49, 0.248) 78.59%, rgba(130, 25, 25, 0.248) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: 3px 6px 27px -10px rgba(223, 125, 125, 0.25);
+    backdrop-filter: blur(2px);
+  }
+  .ball:nth-child(5) {
+    width: 28px;
+    height: 28px;
+    top: 547px;
+    right: 40%;
+    background: radial-gradient(64% 64% at 27.25% 26.5%, rgba(255, 208, 208, 0.48) 0%, rgba(212, 93, 93, 0.248) 59.67%, rgba(167, 49, 49, 0.264) 78.59%, rgba(130, 25, 25, 0.232) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: 3px 6px 27px -10px rgba(223, 125, 125, 0.25);
+    filter: blur(2.5px);
+    backdrop-filter: blur(2px);
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  html {
+    font-size: 12px;
+  }
+
+  body {
+    background-image: url(../assets/images/mobile_bg.svg);
+    background-attachment: fixed;
+    padding-bottom: 610px;
+    min-height: calc(100vh - 610px);
+
+  }
+
+  .container {
+    width: auto;
+    margin: 0 15px;
+  }
+
+  .balls {
+    display: none;
+  }
+
+  .primary-button {
+    padding: 15px 10px;
+    width: 100%;
+  }
+}
